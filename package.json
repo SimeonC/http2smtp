@@ -1,0 +1,16 @@
+{
+    "name": "http-2-smtp",
+    "version": "0.0.1",
+    "description": "A relay to convert your http post request to an smtp email request",
+    "dependencies": {
+        "express": "latest",
+        "express-validator": "latest",
+        "nodemailer": "latest",
+        "caterpillar": "latest",
+        "caterpillar-human": "latest"
+    },
+    "scripts": {
+		"start": "node httpsmtp.js"
+	},
+    "author": "Simeon Cheeseman"
+}
