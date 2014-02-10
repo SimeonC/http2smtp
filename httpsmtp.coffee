@@ -31,7 +31,10 @@ app.post "/send-email", (req, res) ->
 	req.sanitize('subject').toString()
 	req.sanitize('text').toString()
 	req.sanitize('html').toString()
-	
+	# tell nodemailer to change all inline img tags to attachments. use http:// format
+	req.body.forceEmbeddedImages = true
+	# this means that there will ALLWAYS be content, even if the recipient can't view HTML
+	req.body.generateTextFromHTML = true
 	# send mail with defined transport object
 	smtpTransport.sendMail req.body, (error, response) ->
 	    if error
